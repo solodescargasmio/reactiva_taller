@@ -5,12 +5,11 @@ import com.opencsv.exceptions.CsvException;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class CsvUtilFile {
-    private CsvUtilFile(){}
+    private CsvUtilFile(){
+    }
 
     public static List<Player> getPlayers(){
         var uri =  CsvUtilFile.class.getClassLoader().getResource("data.csv");
@@ -35,4 +34,5 @@ public class CsvUtilFile {
             throw new IllegalArgumentException(e.getMessage());
         }
     }
+
 }

@@ -12,12 +12,24 @@ public class DemoApplication {
 
 
 	public static void main(String[] args) {
-		Observer customer;
 		SpringApplication.run(DemoApplication.class, args);
-		List<Player> players = CsvUtilFile.getPlayers();
+		RealizarOperaciones observador=new RealizarOperaciones();
+		LlenarLista llenarLista=new LlenarLista();
+		llenarLista.enlazarObservador(observador);
+		llenarLista.enviarLista(CsvUtilFile.getPlayers());
+		//observador.filtrarJugadoresEdad();
+		//observador.filtrarJugadoresClub();
+		//observador.filtrarJugadoresNacionalidad();
+		//observador.filtrarNacionalidades();
+		//observador.ordenarJugadores();
+		//observador.filtrarNacionalidadesRanking();
+
+
+		//System.out.println(play.getName());
+		/*List<Player> players = CsvUtilFile.getPlayers();
 		for (Player pl:players) {
 			System.out.println(pl.getName()+"  "+pl.getClub());
-		}
+		}*/
 	}
 
 }
