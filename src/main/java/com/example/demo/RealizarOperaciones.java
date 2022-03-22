@@ -70,19 +70,12 @@ public class RealizarOperaciones implements Observador{
             System.out.println(string);
 
         }
-    }/*
+    }
+    
     public void filtrarNacionalidadesRanking(){
-        List<String> lista = players.stream()
-                .map(item->item.getNational())
-                .distinct()
-                .collect(Collectors.toList());
-
-        players.stream()
-                .filter((Predicate<? super Player>) lista.stream())
-                .map(player->player.getWinners())
-                .forEach(System.out::println);
-
-    }*/
+  Map<Object, List<Player>> algo= players.stream().collect(Collectors.groupingBy(player -> new ImmutablePair<>(player.getGames(),player.getNational())));
+    algo.forEach((o, players1) -> System.out.println(players1.get(0).toString()));
+}
 
 
     @Override
